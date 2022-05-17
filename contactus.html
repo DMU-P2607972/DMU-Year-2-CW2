@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0">
+    <link rel="stylesheet" href="Cw2_css.css">
+    <title>Contact us</title>
+</head>
+<body>
+<header>Artist Gallery</header>
+
+<div class="compressed-btn" onclick="openNav()">Menu</div>
+
+<div scrollable="false" class="maincontainer" onclick="closeNav()">
+    <div class="menu-container">
+        <div class="menu-child"><a href="home.html">About</a></div>
+        <div class="menu-child"><a href="gallery.html">Gallery</a></div>
+        <div class="menu-child active_page"><a href="contactus.html">Contact us</a></div>
+    </div>
+</div>
+
+<main>
+    <h3>If you wish to contact us just fill in the form below and we'll get back to you within 5 days</h3>
+
+    <form name="Feedback" id="fform" onsubmit="tymsg()">
+        <div class="form">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" placeholder="your full name" required><br><br>
+
+            <label for="email">Email:</label>
+            <input type="text" name="email" id="email" placeholder="your email address" required><br><br>
+
+            <label for="feedback">Feedback:</label>
+            <textarea name="feedback" id="feedback" placeholder="any questions and feedback here" required></textarea>
+        </div>
+        <div class="sbmt-btn-cntr">
+            <button type="button" value="Submit" class="submitbtn" onclick="tymsg()">Submit</button>
+        </div>
+    </form>
+
+    <div class="alertmsg">Please check that all the fields are filled and try again</div>
+    <div class="tymessage">Thank you for your feedback! We'll get back to you shortly.</div>
+</main>
+
+<footer>
+    <div class="footer">
+        <p class="ftext">The material found on this page is original content taken by the Artist<br>
+            This website is created by Galina Larina P2607972</p>
+
+        <div class="icon-container">
+            <a href="https://www.instagram.com/">
+                <img src="logos/insta-logo.png" alt="instagram logo" class="icon"/>
+            </a>
+            <a href="https://www.facebook.com/">
+                <img src="logos/fb%20logo.png" alt="facebook logo" class="icon">
+            </a>
+            <a href="https://www.linkedin.com/">
+                <img src="logos/linkedin%20logo.png" alt="linkedin logo" class="icon">
+            </a></div>
+    </div>
+</footer>
+
+<script>
+    function openNav() {
+        let y = document.querySelector('.maincontainer');
+        let x = document.querySelector('.menu-container');
+        x.classList.toggle('visible');
+        y.classList.toggle('visible');
+    }
+
+    function closeNav() {
+        let y = document.querySelector('.maincontainer');
+        let x = document.querySelector('.menu-container');
+        x.classList.remove('visible');
+        y.classList.remove('visible');
+    }
+
+    //the following function checks for the fields to eb complete before showing the thank you message on submit,
+    //and asks for the fieldsto be checked that they are completed before trying to submit again.
+
+    function tymsg() {
+        let inputname = document.forms["Feedback"]["name"].value;
+        let inputmail = document.forms["Feedback"]["email"].value;
+        let inputfeed = document.forms["Feedback"]["feedback"].value;
+        let y = document.querySelector('.alertmsg');
+        if ((inputname.length === 0) || (inputmail.length === 0) || (inputfeed.length === 0)) {
+            y.classList.add('visible');
+        } else {
+            let x = document.querySelector('.tymessage');
+            x.classList.add('visible');
+            document.getElementById("fform").reset();
+            y.classList.remove('visible');
+        }
+    }
+
+    // function tymsg() {
+    //     let x = document.querySelector('.tymessage');
+    //     x.classList.add('visible');
+    // }
+</script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- the following meta data makes font size right on mobile devices  -->
+    <!-- and prevents zoom -->
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0">
+    <link rel="stylesheet" href="Cw2_css.css">
+    <title>Home</title>
+</head>
+<body scrollable="true">
+<header>Artist Gallery</header>
+
+<div class="compressed-btn" onclick="openNav()">Menu</div>
+
+<div scrollable="false" class="maincontainer" onclick="closeNav()">
+    <div class="menu-container">
+        <div class="menu-child active_page"><a href="home.html">About</a></div>
+        <div class="menu-child"><a href="gallery.html">Gallery</a></div>
+        <div class="menu-child"><a href="contactus.html">Contact us</a></div>
+    </div>
+</div>
+
+<main>
+    <div class="content-element"><h1>Welcome to Artists Gallery. Here you can view Artists works, i.e. images and videos as you can see below.<br><br>
+        You can click on the images to go to see them closer on a separate page. You can also change background colour!</h1></div>
+
+    <div class="content-element">
+        <label for="pickcol">Pick Background colour: </label>
+        <input type="color" id="pickcol" value="" oninput="ColChange()">
+    </div>
+
+    <div class="content-element" id="slideshow">
+        <a href="img1.html"><img src="images/IMG_0648.JPG" alt="orange berries"/></a> <!--   <a> links to the image and it's description separately from the rest of them  -->
+        <a href="img2.html"><img src="images/IMG_0822.JPG" alt="grass drops"/></a>
+        <a href="img3.html"><img src="images/IMG_0685.JPG" alt="yellow flowers"/></a>
+        <a href="img4.html"><img src="images/IMG_0836.JPG" alt="drops on branch"/></a>
+        <div class="slidebtn" id="leftBtn" onclick="prevSlide()"><</div>
+        <div class="slidebtn" id="rightBtn" onclick="nextSlide()">></div>
+    </div>
+    <div class="content-element">This Artist is interested in the Macro photography, especially with water droplets.</div>
+</main>
+
+<footer>
+    <div class="footer">
+        <p class="ftext">The material found on this page is original content taken by the Artist<br>
+            This website is created by Galina Larina P2607972</p>
+
+        <div class="icon-container">
+            <a href="https://www.instagram.com/">
+            <img src="logos/insta-logo.png" alt="instagram logo" class="icon"/>
+        </a>
+        <a href="https://www.facebook.com/">
+            <img src="logos/fb%20logo.png" alt="facebook logo" class="icon">
+        </a>
+        <a href="https://www.linkedin.com/">
+            <img src="logos/linkedin%20logo.png" alt="linkedin logo" class="icon">
+        </a></div>
+    </div>
+</footer>
+<script>
+    function ColChange() {
+        let x = document.getElementById("pickcol").value;
+        document.getElementById("slideshow").style.background = x;
+    }
+
+    function openNav() {
+        let y = document.querySelector('.maincontainer');
+        let x = document.querySelector('.menu-container');
+        x.classList.toggle('visible');
+        y.classList.toggle('visible');
+    }
+
+    function closeNav() {
+        let y = document.querySelector('.maincontainer');
+        let x = document.querySelector('.menu-container');
+        x.classList.remove('visible');
+        y.classList.remove('visible');
+    }
+
+    //the following code is all for the slideshow on the home page
+    let currentSlide = 0;
+    let slides = document.querySelectorAll("#slideshow img");
+
+    nextSlide = () => {
+        currentSlide++;
+        if (currentSlide >= slides.length) currentSlide = 0;
+        showSlide();
+    };
+
+    prevSlide = () => {
+        currentSlide--;
+        if (currentSlide < 0) currentSlide = slides.length - 1;
+        showSlide();
+    };
+
+    showSlide = () => {
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.opacity = 0;
+            slides[i].style.display = "none";
+        }
+        console.log(slides[currentSlide]);
+        slides[currentSlide].style.opacity = 1;
+        slides[currentSlide].style.display = "block";
+    };
+
+    showSlide();
+</script>
+</body>
+</html>

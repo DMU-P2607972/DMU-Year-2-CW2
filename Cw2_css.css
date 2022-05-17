@@ -1,0 +1,301 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    font-family: Cantarell, Helvetica, sans-serif;;
+}
+html {
+    width: 100%; /* Helps correct calculation of the inner elements' widths. */
+}
+body {
+    height: 100vh; /* Makes the body stick to the window size. */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* Vertical positioning: header - main - footer */
+}
+header {
+    background-color: #e8f3f8;
+    display: flex;
+    flex: 0 0 0; /* This element doesn't change it's size when window is resized. */
+    flex-direction: row; /* Items in header go horizontally. */
+    padding: 0.3em;
+    justify-content: center;
+    font-weight: bolder;
+    font-family: Bahnschrift, sans-serif;
+    font-size: 1.7em;
+}
+main {
+    margin-right: calc(100% - 100vw); /*  This helps content items not jump when scrollbar appears on the right. */
+    overflow: auto;                   /*  Scroll bar will appear and disappear depending on if the content fits or not.*/
+    background-color: #e8f3f8;
+    display: flex;
+    flex: 1 1 0; /* This element grows and shrinks when window is resized. */
+    flex-direction: column; /* Child elements are positioned vertically. */
+}
+footer {
+    background-color: #0d0d3b;
+    display: flex;
+    flex: 0 0 0; /* This element doesn't change it's size when window is resized. */
+    flex-direction: row; /* Items in footer go horizontally. */
+    padding: 0.7em;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* Content elements: */
+div.content-element {
+    padding: 0.5em; /* Just some padding and margins so these elements would be apart */
+    margin: 0.2em 0.5em; /* Margin on the left so that the scrollbar
+                          wouldn't cover part of the content. */
+    border-radius: 0.2em;
+    justify-content: center;
+}
+div.content-element:first-child {
+    margin-top: 0.4em;    /*  Compensates for lack of margins above the first element
+                            because space between all other elements is 2 margins. */
+}
+div.content-element:last-child {
+    margin-bottom: 0.4em; /*  Compensates for lack of margins below the last element
+                            because space between all other elements is 2 margins. */
+}
+
+.active_page {
+    background-color: #1f1f86;
+    color: midnightblue;
+}
+
+#slideshow {
+    background: #e8f3f8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5em;
+    margin: 0.5em;
+    border-radius: 1em;
+    overflow: hidden;
+    align-items: center;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.slidebtn {
+    color: dimgrey;
+    opacity: 1;
+    font-size: 3em;
+    padding: 6em 0.2em;
+    cursor: pointer;
+    transition: opacity 1s;
+    position: absolute;
+}
+
+.slidebtn:hover {
+    background-color: #212121;
+    opacity: 0.9;
+}
+
+#leftBtn {
+    left: 0;
+}
+
+#rightBtn {
+    right: 0;
+}
+
+img {
+    width: 60em;
+    height: auto;
+    padding:0;
+    flex: 1 1 0;
+}
+
+.icon {
+    border: none;
+    width: 3em;
+}
+
+.icon:hover {
+    transform: scale(1.3);
+}
+
+.icon-container { /*a specific container for the icons*/
+    display: flex; /*in the footer as they needed to be specified separately from other images*/
+    justify-content: space-evenly; /*makes it space nice and evenly, aesthetically pleasing to the user*/
+}
+
+div.compressed-btn {
+    background: #0d0d3b;
+    display: none;
+    padding: 1em;
+    color: white;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.compressed-btn:hover {
+    background: #2a2aae;
+    transition: 0.5s;
+}
+
+div.menu-container {
+    background-color: #0d0d3b;
+    display: flex;
+    flex-direction: row;
+    flex: 0 0 0;
+    justify-content: space-evenly;
+    scroll-behavior: unset;
+}
+
+div.menu-child {
+    color: white;
+    padding: 0.5em;
+    flex: 1 1 0;
+    display: flex;
+    justify-content: center;
+    margin: 0.3em;
+    border-radius: 0.5em;
+}
+
+.vid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+}
+
+video {
+    margin: 1em;
+    width: 90vw;
+    flex: 1 1 0;
+}
+
+.menu-child:hover {
+    background-color: #2a2aae;
+    transition: 0.5s;
+}
+
+.tymessage {
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.alertmsg {
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.visible {
+    display: flex!important;
+}
+
+.hide {
+    display: none!important;
+}
+
+.unselectable {
+    user-select: none;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    margin: 2em;
+    /*width: 50vw;*/
+}
+
+form {
+    align-self: center;
+}
+
+#name, #email {
+    width: 50vw;
+    position: center;
+}
+
+#feedback {
+    width: 50vw;
+    height: 100px;
+}
+
+.sbmt-btn-cntr {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.submitbtn {
+    font-weight: bolder;
+    justify-self: center;
+    height: 30px;
+}
+
+h3 {
+    display: flex;
+    justify-content: center;
+    margin: 2em;
+}
+
+a {
+    color: #e8f3f8;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #e8f3f8;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 1250px) {
+    div.menu-container {
+        display: none;
+        flex-direction: column;
+        width: 100vw;
+        position: absolute;
+    }
+
+    div.compressed-btn {
+        display: flex!important;
+        cursor: pointer;
+    }
+
+    div.maincontainer {
+        display: none;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.1);
+        transition: slide 1s;
+    }
+
+    img {
+        width: 80vw;
+        flex: 1 1 0;
+    }
+
+    video {
+        width: 80vw;
+    }
+
+    #slideshow {
+        align-items: center;
+    }
+
+    .slidebtn {
+        padding: 6em 0.2em;
+        font-size: 2em;
+    }
+}
+
+@media screen and (min-width: 1250px) {
+    video {
+        width: 55vw;
+    }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0">
+    <link rel="stylesheet" href="Cw2_css.css">
+    <title>Picture</title>
+</head>
+<body scrollable="true">
+<header>Artist Gallery</header>
+
+<div class="compressed-btn" onclick="openNav()">Menu</div>
+
+<div scrollable="false" class="maincontainer" onclick="closeNav()">
+    <div class="menu-container">
+        <div class="menu-child"><a href="home.html">About</a></div>
+        <div class="menu-child"><a href="gallery.html">Gallery</a></div>
+        <div class="menu-child"><a href="contactus.html">Contact us</a></div>
+    </div>
+</div>
+
+<main>
+    <div class="content-element">
+        <h1>You can also change background colour to suit your wall colour or paspartu if you'd like to have an idea<br>
+        of what it would look like in your house if you buy it!</h1><br>
+        <label for="pickcol">Pick Background colour: </label>
+        <input type="color" id="pickcol" value="" oninput="ColChange()">
+    </div>
+
+    <div class="content-element" id="slideshow">
+        <img src="images/IMG_0648.JPG" alt="orange berries"/></div>
+        <div class="content-element">
+            <h3>Description</h3>
+            <h3>This piece portraits the beauty of ripe spring berries from artists point of view.<br>
+                This is a picture of the pyracantha tree with a wide spread of ripe berries on it.<br><br>
+            If you want to know more about this image, please feel free to use the form on Contact Us page.</h3>
+        </div>
+</main>
+
+<footer>
+    <div class="footer">
+        <p class="ftext">The material found on this page is original content taken by the Artist<br>
+            This website is created by Galina Larina P2607972</p>
+
+        <div class="icon-container">
+            <a href="https://www.instagram.com/">
+                <img src="logos/insta-logo.png" alt="instagram logo" class="icon"/>
+            </a>
+            <a href="https://www.facebook.com/">
+                <img src="logos/fb%20logo.png" alt="facebook logo" class="icon">
+            </a>
+            <a href="https://www.linkedin.com/">
+                <img src="logos/linkedin%20logo.png" alt="linkedin logo" class="icon">
+            </a></div>
+    </div>
+</footer>
+<script>
+    function ColChange() {
+        let x = document.getElementById("pickcol").value;
+        document.getElementById("slideshow").style.background = x;
+    }
+
+    function openNav() {
+        let y = document.querySelector('.maincontainer');
+        let x = document.querySelector('.menu-container');
+        x.classList.toggle('visible');
+        y.classList.toggle('visible');
+    }
+
+    function closeNav() {
+        let y = document.querySelector('.maincontainer');
+        let x = document.querySelector('.menu-container');
+        x.classList.remove('visible');
+        y.classList.remove('visible');
+    }
+</script>
+</body>
+</html>
