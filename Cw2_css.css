@@ -73,7 +73,6 @@ div.content-element:last-child {
     padding: 5em;
     margin: 0.5em;
     border-radius: 1em;
-    overflow: hidden;
     align-items: center;
 }
 
