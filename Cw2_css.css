@@ -150,7 +150,7 @@ div.menu-container {
     scroll-behavior: unset;
 }
 
-div.menu-child {
+.menu-child {
     color: white;
     padding: 0.5em;
     flex: 1 1 0;
