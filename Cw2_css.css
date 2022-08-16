@@ -216,6 +216,19 @@ form {
     align-self: center;
 }
 
+input, textarea {
+    border: 3px solid;
+    border-radius: 7px;
+}
+
+input:required:valid {
+    border-color: #228B22;
+}
+
+input:invalid {
+    border-color: #B22222;
+}
+
 #name, #email {
     width: 50vw;
     position: center;
