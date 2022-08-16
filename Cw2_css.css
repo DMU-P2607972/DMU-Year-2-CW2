@@ -116,6 +116,7 @@ img {
 .icon {
     border: none;
     width: 3em;
+    transition: 1s;
 }
 
 .icon:hover {
