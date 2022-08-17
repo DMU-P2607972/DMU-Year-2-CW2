@@ -45,18 +45,18 @@ footer {
 
 /* Content elements: */
 div.content-element {
-    padding: 0.5em; /* Just some padding and margins so these elements would be apart */
+    padding: 1.5em; /* Just some padding and margins so these elements would be apart */
     margin: 0.2em 0.5em; /* Margin on the left so that the scrollbar
                           wouldn't cover part of the content. */
     border-radius: 0.2em;
     justify-content: center;
 }
 div.content-element:first-child {
-    margin-top: 0.4em;    /*  Compensates for lack of margins above the first element
+    margin-top: 1em;    /*  Compensates for lack of margins above the first element
                             because space between all other elements is 2 margins. */
 }
 div.content-element:last-child {
-    margin-bottom: 0.4em; /*  Compensates for lack of margins below the last element
+    margin-bottom: 1em; /*  Compensates for lack of margins below the last element
                             because space between all other elements is 2 margins. */
 }
 
