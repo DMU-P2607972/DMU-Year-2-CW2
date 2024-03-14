@@ -1,6 +1,6 @@
 ## Welcome to GitHub Pages for DMU-P2607972 student, Galina Larina.
 
-Coursework 1 website link: 'NOT RELEVANT FOR THIS COURSEWORK'
+Coursework 1 website link: 'NOT RELEVANT FOR THIS COURSEWORK' (coursework 1 was a designing excersice for this website using photoshop and other available tools for website designs)
 
 <a href="https://dmu-p2607972.github.io/TECH2015_CW2/home.html">Coursework 2 - website</a>
 
