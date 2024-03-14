@@ -1,6 +1,7 @@
 ## Welcome to GitHub Pages for DMU-P2607972 student, Galina Larina.
 
-Coursework 1 website link: 'NOT RELEVANT FOR THIS COURSEWORK' (coursework 1 was a designing excersice for this website using photoshop and other available tools for website designs)
+Coursework 1 website link: 'NOT RELEVANT FOR THIS COURSEWORK' (coursework 1 was a designing excersice for this website using photoshop and InVision prototyping tool)
+<a href="https://projects.invisionapp.com/d/main?origin=v7#/projects/prototypes/21775594"> InVision CW1 prototype for CW2 </a>
 
 <a href="https://dmu-p2607972.github.io/TECH2015_CW2/home.html">Coursework 2 - website</a>
 
